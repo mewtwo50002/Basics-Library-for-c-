@@ -72,10 +72,10 @@ Standardizes the input string by capitalizing the first letter and converting th
 
 To use these utility functions in your C++ program, follow these steps:
 
-1. Include the `basics.h` header in your C++ source code file.
+1. Include the `basics.cpp` header in your C++ source code file.
 
 ```cpp
-#include "basics.h"
+#include "basics.cpp"
 ```
 
 2. Call the desired utility functions from your code as needed.
