@@ -1,3 +1,17 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <thread>
+#include <chrono>
+#include <fstream>
+#include <algorithm>
+#include <cctype>
+#include <locale>
+
+using namespace std;
+using namespace std::chrono;
+using namespace std::this_thread;
+
 string lowercaseFirst(string input)
 {
     input[0] = tolower(input[0]);
