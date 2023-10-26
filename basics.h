@@ -121,3 +121,4 @@ string searchParam(string input)
 {
     return uppercaseFirst(lowercaseAll(input));
 }
+
