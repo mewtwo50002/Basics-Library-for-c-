@@ -100,5 +100,3 @@ This code is provided under the MIT License. You are free to use, modify, and di
 Please make sure to include the necessary header files and functions in your project for it to work correctly.
 
 ---
-
-Feel free to customize this README to fit your specific project requirements, and make sure to provide information on how to integrate these utility functions into your code.
