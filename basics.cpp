@@ -22,7 +22,10 @@ string lowercaseAll(string input)
 {
     for (int i = 0; i < input.size(); i++)
     {
-        input[i] = tolower(input[i]);
+        if (input[i] != ' ')
+        {
+            input[i] = tolower(input[i]);
+        }
     }
 
     return input;
@@ -32,7 +35,11 @@ string uppercaseAll(string input)
 {
     for (int i = 0; i < input.size(); i++)
     {
-        input[i] = toupper(input[i]);
+        if (input[i] != ' ')
+        {
+            input[i] = toupper(input[i]);
+        }
+        
     }
 
     return input;
@@ -108,7 +115,7 @@ int menuCreator(vector<string> menuChoices, string prompt)
     cin >> find;
     for (int i = 0; i < menuChoices.size(); i++)
     {
-        if (uppercaseFirst(lowercaseAll(find)) == uppercaseFirst(lowercaseAll(menuChoices[i])))
+        if (searchParam(find) == searchParam(menuChoices[i]))
         {
             return (i + 1);
         }
@@ -119,6 +126,17 @@ int menuCreator(vector<string> menuChoices, string prompt)
 
 string searchParam(string input)
 {
-    return uppercaseFirst(lowercaseAll(input));
+    for (int i = 0; i < input.size(); i++)
+    {
+        if (input[i] == ' ')
+        {
+            input[i] == '-';
+        }else
+        {
+            input[i] = tolower(input[i]);
+        }
+        
+    }
+    
 }
 

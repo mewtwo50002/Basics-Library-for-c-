@@ -1,96 +1,104 @@
-# C++ Utility Functions
 
-This repository contains a collection of utility functions written in C++ for various common tasks. These functions can be used to simplify and streamline your C++ programs. The included functions cover a range of tasks, from string manipulation to user interaction.
+---
 
-## Table of Contents
+# Utility Functions README
 
-- [Prerequisites](#prerequisites)
-- [Functions](#functions)
-  - [String Manipulation](#string-manipulation)
-  - [User Interaction](#user-interaction)
-- [Usage](#usage)
+## Introduction
 
-## Prerequisites
-
-Before using these utility functions, you should have a C++ development environment set up. Ensure you have a C++ compiler (e.g., g++) installed on your system.
+This C++ code provides a collection of utility functions for various text and user interaction tasks. These functions can be used to manipulate and work with strings, create user menus, clear the console screen, and perform other useful operations.
 
 ## Functions
 
-### String Manipulation
+### `lowercaseFirst`
 
-#### `string lowercaseFirst(string input)`
+This function takes a string as input and returns the same string with its first character converted to lowercase.
 
-This function converts the first character of a string to lowercase and returns the modified string.
+### `lowercaseAll`
 
-#### `string lowercaseAll(string input)`
+Given a string, this function converts all characters (except spaces) to lowercase.
 
-Converts all characters in a string to lowercase and returns the modified string.
+### `uppercaseAll`
 
-#### `string uppercaseAll(string input)`
+This function, when given a string, converts all characters (except spaces) to uppercase.
 
-Converts all characters in a string to uppercase and returns the modified string.
-
-#### `string uppercaseFirst(string input)`
+### `uppercaseFirst`
 
 Converts the first character of a string to uppercase and returns the modified string.
 
-### User Interaction
+### `newLine`
 
-#### `void newLine()`
+Simply adds a newline to the console output.
 
-Prints a newline character, effectively creating a blank line in the console.
+### `clear`
 
-#### `void clear()`
+Clears the console screen, providing a clean slate for the next output.
 
-Clears the console screen.
+### `randomInt`
 
-#### `int randomInt(int max)`
+Generates a random integer within a specified range.
 
-Generates a random integer between 1 and the specified maximum value.
+### `maxInput`
 
-#### `int maxInput(int input, int max)`
+Compares an input value with a maximum value and returns the minimum of the two.
 
-Ensures that the provided input does not exceed the specified maximum value.
+### `minInput`
 
-#### `int minInput(int input, int min)`
+Compares an input value with a minimum value and returns the maximum of the two.
 
-Ensures that the provided input is at least as large as the specified minimum value.
+### `wait`
 
-#### `void wait(int timeToWait)`
+Pauses the program for a specified amount of time (in seconds).
 
-Pauses the program's execution for the specified number of seconds.
+### `menuCreator`
 
-#### `int menuCreator(vector<string> menuChoices, string prompt)`
+Creates a menu by displaying a list of choices to the user and allowing them to select an option. Returns the index of the chosen option.
 
-Displays a menu to the user with the provided choices and returns the index of the selected choice. The user can input their choice based on the menu item's name.
+### `searchParam`
 
-#### `string searchParam(string input)`
-
-Standardizes the input string by capitalizing the first letter and converting the rest of the characters to lowercase. This function is useful for normalizing user inputs.
+Converts a string to lowercase and replaces spaces with hyphens, useful for search parameter formatting.
 
 ## Usage
 
-To use these utility functions in your C++ program, follow these steps:
-
-1. Include the `basics.h` header in your C++ source code file.
+You can include this code in your C++ project to simplify common text manipulation and user interaction tasks. Here's a brief example of how to use some of these functions:
 
 ```cpp
-#include "basics.h"
+#include <iostream>
+#include "utility_functions.h"
+
+using namespace std;
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    cin >> input;
+
+    string lowercased = lowercaseAll(input);
+    cout << "Lowercased: " << lowercased << endl;
+
+    string uppercased = uppercaseFirst(input);
+    cout << "Uppercased First: " << uppercased << endl;
+
+    clear();
+
+    int randomNumber = randomInt(100);
+    cout << "Random Number: " << randomNumber << endl;
+
+    wait(2); // Wait for 2 seconds
+
+    vector<string> choices = {"Option 1", "Option 2", "Option 3"};
+    int choice = menuCreator(choices, "Select an option:");
+    cout << "You chose: " << choices[choice - 1] << endl;
+
+    return 0;
+}
 ```
 
-2. Call the desired utility functions from your code as needed.
+## License
 
-Example:
+This code is provided under the MIT License. You are free to use, modify, and distribute it as needed.
 
-```cpp
-string userInput;
-cout << "Enter a string: ";
-cin >> userInput;
+Please make sure to include the necessary header files and functions in your project for it to work correctly.
 
-// Normalize user input
-userInput = searchParam(userInput);
+---
 
-cout << "Normalized input: " << userInput << endl;
-```
-
-Feel free to incorporate these functions into your C++ programs to streamline common tasks and improve code readability.
+Feel free to customize this README to fit your specific project requirements, and make sure to provide information on how to integrate these utility functions into your code.
