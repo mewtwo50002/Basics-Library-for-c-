@@ -12,6 +12,8 @@ using namespace std;
 using namespace std::chrono;
 using namespace std::this_thread;
 
+//String Manipulation
+
 string lowercaseFirst(string input)
 {
     input[0] = tolower(input[0]);
@@ -52,6 +54,24 @@ string uppercaseFirst(string input)
     return input;
 }
 
+string searchParam(string input)
+{
+    for (int i = 0; i < input.size(); i++)
+    {
+        if (input[i] == ' ')
+        {
+            input[i] == '-';
+        }else
+        {
+            input[i] = tolower(input[i]);
+        }
+        
+    }
+    
+}
+
+//System Functions and QOL Functions
+
 void newLine()
 {
     cout << endl;
@@ -59,6 +79,7 @@ void newLine()
 
 void clear()
 {
+    cout << "\x1B[2J\x1B[H";
     cout << "\x1B[2J\x1B[H";
 }
 
@@ -124,19 +145,5 @@ int menuCreator(vector<string> menuChoices, string prompt)
     return (choice);
 }
 
-string searchParam(string input)
-{
-    for (int i = 0; i < input.size(); i++)
-    {
-        if (input[i] == ' ')
-        {
-            input[i] == '-';
-        }else
-        {
-            input[i] = tolower(input[i]);
-        }
-        
-    }
-    
-}
+
 
