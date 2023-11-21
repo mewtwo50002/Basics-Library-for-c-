@@ -133,7 +133,7 @@ int menuCreator(vector<string> menuChoices, string prompt)
     {
         cout << menuChoices[i] << endl;
     }
-    cin >> find;
+    getline(cin, find);
     for (int i = 0; i < menuChoices.size(); i++)
     {
         if (searchParam(find) == searchParam(menuChoices[i]))
