@@ -67,7 +67,7 @@ string searchParam(string input)
         }
         
     }
-    
+    return input;
 }
 
 //System Functions and QOL Functions
